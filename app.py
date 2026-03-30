@@ -148,3 +148,4 @@ def delete(id):
     conn.commit()
     conn.close()
     return redirect("/")
+# ❌ ลบ app.run() ออก (PythonAnywhere ไม่ใช้)
