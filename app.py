@@ -140,14 +140,5 @@ def edit(id):
     conn.close()
     return render_template("edit.html", cake=cake, categories=categories)
 
-# ลบ (แถมให้)
-@app.route("/delete/<int:id>")
-def delete(id):
-    conn = get_db()
-    conn.execute("DELETE FROM cakes WHERE id=?", (id,))
-    conn.commit()
-    conn.close()
-    return redirect("/")
-
 if __name__ == "__main__":
     app.run(debug=True)
